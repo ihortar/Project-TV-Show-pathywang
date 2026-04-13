@@ -3,10 +3,21 @@ body {
   margin: 20px;
 }
 
-/* Container layout */
-#root {
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.controls-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#episodes-container {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
