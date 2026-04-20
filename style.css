@@ -1,46 +1,119 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
-  margin: 20px;
+  background-color: #f1f1f1;
+  color: #222;
 }
 
-.page-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+#root {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 12px;
 }
 
-.controls-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.controls {
+  display: grid;
+  grid-template-columns: 210px 210px 180px auto;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.controls select,
+.controls input {
+  height: 38px;
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #999;
+  background: #fff;
+}
+
+#count-display {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+  white-space: nowrap;
+}
+
+#status-message {
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: #b00020;
+}
+
+#credit {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
 }
 
 #episodes-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 22px;
 }
 
-/* Each episode card */
 .episode-card {
-  border: 1px solid #ccc;
+  background: #f7f7f7;
   border-radius: 10px;
-  padding: 10px;
-  background-color: #f9f9f9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 0 0 18px;
+  min-height: 100%;
 }
 
-/* Title */
-.episode-card h3 {
-  font-size: 16px;
+.episode-title {
+  margin: 0 0 18px;
+  padding: 18px 16px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.4;
+  border: 1px solid #777;
+  border-radius: 10px;
+  background: #fff;
 }
 
-/* Image */
-.episode-card img {
-  width: 100%;
-  border-radius: 6px;
+.episode-image {
+  display: block;
+  width: 180px;
+  max-width: 90%;
+  margin: 0 auto 18px;
 }
 
-/* Summary */
-.episode-card p {
-  font-size: 14px;
+.episode-summary {
+  padding: 0 28px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #666;
+}
+
+.episode-summary p {
+  margin: 0;
+}
+
+a {
+  color: #1a5fb4;
+}
+
+@media (max-width: 1000px) {
+  .controls {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #episodes-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .controls {
+    grid-template-columns: 1fr;
+  }
+
+  #episodes-container {
+    grid-template-columns: 1fr;
+  }
 }
